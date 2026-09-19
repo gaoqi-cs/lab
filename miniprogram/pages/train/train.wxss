@@ -1,0 +1,292 @@
+.training-intro {
+  display:flex;
+  gap:20rpx;
+  align-items:flex-start;
+  padding:24rpx;
+  border-radius:16rpx;
+  background:#EAF1FA;
+  color:#2B5B99;
+  }
+
+.training-intro image {
+  width:58rpx;
+  height:58rpx;
+  }
+
+.training-intro view {
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  gap:8rpx;
+  }
+
+.training-intro text:first-child {
+  font-size:31rpx;
+  font-weight:700;
+  }
+
+.training-intro text:last-child {
+  color:#5C7493;
+  font-size:24rpx;
+  line-height:1.55;
+  }
+
+.form-card,.status-card {
+  margin-top:22rpx;
+  padding:26rpx;
+  }
+
+.dataset-card {
+  margin-top: 22rpx;
+  padding: 26rpx;
+}
+
+.dataset-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dataset-head view {
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.dataset-total,
+.dataset-empty {
+  color: #86909C;
+  font-size: 23rpx;
+}
+
+.refresh-btn {
+  padding: 0 22rpx;
+  font-size: 23rpx;
+}
+
+.dataset-list {
+  margin-top: 18rpx;
+}
+
+.dataset-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18rpx 0;
+  border-top: 1rpx solid #E7EDF5;
+}
+
+.dataset-name {
+  color: #1D2129;
+  font-size: 26rpx;
+}
+
+.dataset-count {
+  color: #2B5B99;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.dataset-actions {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+}
+
+.delete-case-btn {
+  min-width: 86rpx;
+  margin: 0;
+  padding: 0 14rpx;
+  border: 1rpx solid #F3C5BA;
+  border-radius: 8rpx;
+  background: #FFF1ED;
+  color: #E65C3C;
+  font-size: 22rpx;
+  line-height: 52rpx;
+}
+
+.delete-case-btn[disabled] {
+  border-color: #E7EDF5;
+  background: #F5F7FA;
+  color: #C8D2DF;
+}
+
+.train-btn {
+  width: 100%;
+  margin: 0 0 22rpx;
+}
+
+.form-label {
+  display:block;
+  margin-bottom:14rpx;
+  color:#1D2129;
+  font-size:27rpx;
+  font-weight:600;
+  }
+
+.upload-row {
+  display:flex;
+  gap:16rpx;
+  }
+
+.upload-row button {
+  flex:1;
+  }
+
+.sample-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12rpx;
+  margin:22rpx 0;
+  }
+
+.sample-item {
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:1;
+  border-radius:10rpx;
+  }
+
+.sample-item image {
+  width:100%;
+  height:100%;
+  }
+
+.sample-item text {
+  position:absolute;
+  top:6rpx;
+  right:6rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:32rpx;
+  height:32rpx;
+  border-radius:50%;
+  background:rgba(29,33,41,.65);
+  color:#FFF;
+  font-size:25rpx;
+  }
+
+.sample-empty {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:7rpx;
+  padding:32rpx 0;
+  color:#86909C;
+  font-size:25rpx;
+  }
+
+.sample-empty image {
+  width:58rpx;
+  height:58rpx;
+  }
+
+.sample-empty text:last-child {
+  font-size:22rpx;
+  }
+
+.label-input {
+  height:82rpx;
+  padding:0 20rpx;
+  box-sizing:border-box;
+  border:1rpx solid #D9E2EE;
+  border-radius:12rpx;
+  background:#F9FBFD;
+  color:#1D2129;
+  font-size:27rpx;
+  }
+
+.reset-row {
+  display:flex;
+  align-items:center;
+  gap:10rpx;
+  margin-top:20rpx;
+  color:#4E5969;
+  font-size:24rpx;
+  }
+
+.status-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  }
+
+.status-head > text:first-child {
+  color:#1D2129;
+  font-size:28rpx;
+  font-weight:700;
+  }
+
+.status-badge {
+  padding:7rpx 14rpx;
+  border-radius:999rpx;
+  background:#EEF3F8;
+  color:#86909C;
+  font-size:22rpx;
+  }
+
+.status-badge.running {
+  background:#EAF1FA;
+  color:#2B5B99;
+  }
+
+.status-badge.done {
+  background:#E8F7EF;
+  color:#34A673;
+  }
+
+.status-badge.failed {
+  background:#FFF1ED;
+  color:#E65C3C;
+  }
+
+.status-track {
+  height:12rpx;
+  margin:22rpx 0 14rpx;
+  overflow:hidden;
+  border-radius:999rpx;
+  background:#EAF1FA;
+  }
+
+.status-fill {
+  width:14%;
+  height:100%;
+  background:#B9C8DA;
+  }
+
+.status-fill.running {
+  width:58%;
+  background:#2B5B99;
+  }
+
+.status-fill.done {
+  width:100%;
+  background:#34A673;
+  }
+
+.status-log {
+  display:block;
+  color:#86909C;
+  font-size:23rpx;
+  line-height:1.55;
+  }
+
+.stop-btn {
+  margin:18rpx 0 0;
+  border-radius:10rpx;
+  background:#FFF1ED;
+  color:#E65C3C;
+  font-size:25rpx;
+  }
+
+.start-btn {
+  width:100%;
+  margin:22rpx 0;
+  }
+
+.start-btn[disabled] {
+  background:#C8D2DF;
+  color:#FFF;
+  }
+

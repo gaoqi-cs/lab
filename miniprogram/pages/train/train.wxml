@@ -1,0 +1,78 @@
+<view class="page">
+  <view class="training-intro">
+    <image src="/images/me_active.png" mode="aspectFit"></image>
+    <view>
+      <text>场景样本训练</text>
+      <text>上传带标注的安全或隐患图片，用于微调本校实验室识别模型。</text>
+    </view>
+  </view>
+
+  <view class="card form-card">
+    <text class="form-label">训练样本</text>
+    <view class="upload-row">
+      <button class="primary-btn" bindtap="chooseImages">添加本批图片</button>
+      <button class="secondary-btn" bindtap="clearImages">清空本批</button>
+    </view>
+
+    <view wx:if="{{imageList.length}}" class="sample-grid">
+      <view wx:for="{{imageList}}" wx:key="path" class="sample-item">
+        <image src="{{item.path}}" mode="aspectFill"></image>
+        <text bindtap="removeImage" data-index="{{index}}">×</text>
+      </view>
+    </view>
+    <view wx:else class="sample-empty">
+      <image src="/images/me.png" mode="aspectFit"></image>
+      <text>暂无样本图片</text>
+      <text>每批最多 9 张，可重复分批上传</text>
+    </view>
+
+    <text class="form-label">样本标签</text>
+    <input class="label-input" placeholder="例如：未佩戴护目镜" value="{{label}}" bindinput="onLabelInput" />
+    <view class="reset-row">
+      <checkbox checked="{{clearOld}}" color="#2B5B99" bindtap="onClearOldChange" />
+      <text>重新训练时清空原有训练样本</text>
+    </view>
+  </view>
+
+  <view class="card dataset-card">
+    <view class="dataset-head">
+      <view>
+        <text class="form-label">已收集训练案例</text>
+        <text class="dataset-total">共 {{datasetTotal}} 张图片</text>
+      </view>
+      <button class="secondary-btn refresh-btn" bindtap="loadDataset">刷新</button>
+    </view>
+    <view wx:if="{{datasetClasses.length}}" class="dataset-list">
+      <view wx:for="{{datasetClasses}}" wx:key="name" class="dataset-item">
+        <text class="dataset-name">{{item.name}}</text>
+        <view class="dataset-actions">
+          <text class="dataset-count">{{item.count}} 张</text>
+          <button class="delete-case-btn" bindtap="deleteDatasetClass" data-name="{{item.name}}" disabled="{{isTraining}}">删除</button>
+        </view>
+      </view>
+    </view>
+    <text wx:else class="dataset-empty">还没有保存训练案例</text>
+  </view>
+
+  <view class="card status-card">
+    <view class="status-head">
+      <text>训练状态</text>
+      <text class="status-badge {{status.status}}">
+        {{status.status === 'running' ? '训练中' : status.status === 'done' ? '已完成' : status.status === 'failed' ? '训练失败' : '等待训练'}}
+      </text>
+    </view>
+    <view class="status-track">
+      <view class="status-fill {{status.status}}"></view>
+    </view>
+    <text class="status-log">
+      {{status.status === 'idle' ? '等待上传样本并开始训练' : status.status === 'running' ? '正在通过 WebSocket 接收训练状态…' : status.status === 'done' ? '训练任务已完成，请前往识别页验证' : '训练任务未成功完成'}}
+    </text>
+    <button wx:if="{{status.status==='running'}}" class="stop-btn" bindtap="stopTraining">停止训练</button>
+  </view>
+
+  <button class="primary-btn start-btn" bindtap="uploadBatch" disabled="{{!canUpload || isTraining}}" loading="{{isTraining}}">
+    {{isTraining ? '正在保存样本' : '保存本批样本'}}
+  </button>
+  <button class="secondary-btn train-btn" bindtap="startTraining" disabled="{{!canTrain || isTraining}}">准备完成，开始训练</button>
+  <view class="demo-strip">演示模式：未导入安全样本与基础模型时，训练无法产生可用于正式巡检的识别结果。</view>
+</view>

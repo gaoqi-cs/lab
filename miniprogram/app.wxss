@@ -1,0 +1,11 @@
+page { background: #F5F7FA; color: #1D2129; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+button::after { border: 0; }
+.page { min-height: 100vh; box-sizing: border-box; padding: 28rpx 30rpx 48rpx; background: #F5F7FA; }
+.page-heading { font-size: 40rpx; line-height: 1.25; font-weight: 700; color: #1D2129; }
+.page-desc { display: block; margin-top: 12rpx; font-size: 26rpx; line-height: 1.65; color: #4E5969; }
+.section-title { display: block; margin: 30rpx 0 16rpx; font-size: 29rpx; font-weight: 600; color: #1D2129; }
+.card { border-radius: 16rpx; background: #FFFFFF; box-shadow: 0 8rpx 20rpx rgba(31, 56, 88, 0.06); }
+.primary-btn { margin: 0; border-radius: 12rpx; background: #2B5B99; color: #FFFFFF; font-size: 29rpx; font-weight: 600; }
+.secondary-btn { margin: 0; border-radius: 12rpx; background: #EAF1FA; color: #2B5B99; font-size: 28rpx; font-weight: 600; }
+.warning-strip { padding: 18rpx 20rpx; border-radius: 12rpx; background: #FFF1ED; color: #B64A31; font-size: 24rpx; line-height: 1.55; }
+.demo-strip { padding: 18rpx 20rpx; border-radius: 12rpx; background: #EEF3F8; color: #5F7185; font-size: 24rpx; line-height: 1.6; }

@@ -1,0 +1,265 @@
+.home-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 26rpx 30rpx 44rpx;
+  background: #F5F7FA;
+  }
+
+.welcome-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 352rpx;
+  padding: 38rpx 30rpx 24rpx;
+  box-sizing: border-box;
+  border-radius: 16rpx;
+  background: #EAF3FF;
+  box-shadow: 0 10rpx 22rpx rgba(43, 91, 153, .09);
+  }
+
+.welcome-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  max-width: 76%;
+  gap: 12rpx;
+  }
+
+.welcome-copy text:first-child {
+  color: #2B5B99;
+  font-size: 34rpx;
+  font-weight: 700;
+  }
+
+.welcome-copy text:nth-child(2) {
+  color: #245590;
+  font-size: 38rpx;
+  font-weight: 700;
+  line-height: 1.32;
+  }
+
+.welcome-copy text:last-child {
+  margin-top: 2rpx;
+  color: #6C829E;
+  font-size: 25rpx;
+  }
+
+.welcome-art {
+  position: absolute;
+  top: 30rpx;
+  right: -26rpx;
+  width: 260rpx;
+  height: 210rpx;
+  opacity: .5;
+  }
+
+.welcome-art view {
+  position: absolute;
+  border: 7rpx solid #8EB7E7;
+  border-radius: 8rpx;
+  }
+
+.welcome-art view:first-child {
+  top: 46rpx;
+  right: 40rpx;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  }
+
+.welcome-art view:nth-child(2) {
+  top: 116rpx;
+  right: 82rpx;
+  width: 116rpx;
+  height: 52rpx;
+  border-top: 0;
+  transform: skew(-18deg);
+  }
+
+.welcome-art view:last-child {
+  top: 14rpx;
+  right: 166rpx;
+  width: 14rpx;
+  height: 88rpx;
+  border-width: 0 7rpx 7rpx 0;
+  border-radius: 0;
+  }
+
+.welcome-safe {
+  position: absolute;
+  right: 20rpx;
+  bottom: 18rpx;
+  left: 20rpx;
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  background: rgba(255, 255, 255, .88);
+  color: #2B5B99;
+  font-size: 25rpx;
+  font-weight: 600;
+  }
+
+.welcome-safe image {
+  width: 34rpx;
+  height: 34rpx;
+  }
+
+.role-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 24rpx 4rpx 18rpx;
+  color: #86909C;
+  font-size: 23rpx;
+  }
+
+.role-row text:last-child {
+  color: #2B5B99;
+  font-weight: 600;
+  }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+  }
+
+.feature-card {
+  position: relative;
+  min-height: 252rpx;
+  padding: 28rpx 24rpx;
+  box-sizing: border-box;
+  border-radius: 16rpx;
+  background: #FFF;
+  box-shadow: 0 8rpx 20rpx rgba(31, 56, 88, .06);
+  }
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+  }
+
+.feature-icon image {
+  width: 45rpx;
+  height: 45rpx;
+  }
+
+.feature-icon.blue {
+  background: #E6F0FF;
+  }
+
+.feature-icon.orange {
+  background: #FFF0EB;
+  }
+
+.feature-title {
+  display: block;
+  margin-top: 22rpx;
+  color: #1D3B65;
+  font-size: 29rpx;
+  font-weight: 700;
+  }
+
+.feature-desc {
+  display: block;
+  margin-top: 12rpx;
+  padding-right: 10rpx;
+  color: #86909C;
+  font-size: 23rpx;
+  line-height: 1.55;
+  }
+
+.feature-arrow {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  color: #8AA4C3;
+  font-size: 38rpx;
+  }
+
+.demo-card {
+  margin-top: 24rpx;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  background: #EEF5FD;
+  color: #6A7E95;
+  font-size: 24rpx;
+  line-height: 1.65;
+  }
+
+.demo-title {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 10rpx;
+  color: #2B5B99;
+  font-size: 28rpx;
+  font-weight: 700;
+  }
+
+.demo-title text:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background: #2B5B99;
+  color: #FFF;
+  font-size: 22rpx;
+  }
+
+.latest-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20rpx;
+  margin-top: 24rpx;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  background: #FFF;
+  box-shadow: 0 8rpx 20rpx rgba(31, 56, 88, .06);
+  }
+
+.latest-card view {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8rpx;
+  }
+
+.latest-card view:first-child text:first-child {
+  color: #1D2129;
+  font-size: 27rpx;
+  font-weight: 700;
+  }
+
+.latest-card view:first-child text:last-child {
+  overflow: hidden;
+  color: #86909C;
+  font-size: 21rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  }
+
+.latest-card view:last-child {
+  align-items: flex-end;
+  flex-shrink: 0;
+  }
+
+.latest-card view:last-child text:first-child {
+  color: #E65C3C;
+  font-size: 25rpx;
+  font-weight: 700;
+  }
+
+.latest-card view:last-child text:last-child {
+  color: #2B5B99;
+  font-size: 22rpx;
+  }
+

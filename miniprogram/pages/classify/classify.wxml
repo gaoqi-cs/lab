@@ -1,0 +1,45 @@
+<!--pages/classify/classify.wxml-->
+<view class="page">
+  <view class="warning-strip">模型输出仅供参考，不可作为正式安全判定依据。</view>
+
+  <view class="inspect-actions">
+    <button class="primary-btn" bindtap="takePhoto">拍照巡检</button>
+    <button class="secondary-btn" bindtap="chooseFromAlbum">从相册选择</button>
+  </view>
+
+  <view class="preview-box">
+    <image wx:if="{{image.path}}" src="{{image.url}}" mode="aspectFill"></image>
+    <view wx:else>
+      <image src="/images/classify_active.png" mode="aspectFit"></image>
+      <text>现场图片预览区</text>
+      <text>请拍摄实验台、设备区或操作区域</text>
+    </view>
+  </view>
+
+  <button class="primary-btn recognize-btn" bindtap="startRecognize" disabled="{{isProcessing || !image.path}}" loading="{{isProcessing}}">
+    {{isProcessing ? '正在识别...' : '开始安全识别'}}
+  </button>
+
+  <view wx:if="{{error}}" class="warning-strip result-error">{{error}}</view>
+
+  <view wx:if="{{result}}" class="result-card">
+    <view class="result-head">
+      <text>识别结果</text>
+      <text class="risk-badge">风险待确认</text>
+    </view>
+    <text class="result-label">{{result.result.top1}}</text>
+    <view class="confidence-row">
+      <text>置信度</text>
+      <text>{{result.result.top1_confidence}}</text>
+    </view>
+    <view class="confidence-track">
+      <view class="confidence-fill"></view>
+    </view>
+    <text class="result-note">请结合现场情况和相关安全规程进行复核。</text>
+  </view>
+
+  <view class="result-actions">
+    <button class="secondary-btn" bindtap="takePhoto">重新拍照</button>
+    <button class="primary-btn" bindtap="saveTemporaryResult" disabled="{{!result}}">保存临时结果</button>
+  </view>
+</view>

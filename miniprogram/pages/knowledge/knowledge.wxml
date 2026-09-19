@@ -1,0 +1,37 @@
+<view class="page">
+  <view class="search-box">
+    <text>⌕</text>
+    <input placeholder="搜索 SOP、应急预案、安全手册" value="{{query}}" bindinput="onSearch" />
+  </view>
+
+  <view class="knowledge-head">
+    <view>
+      <text>安全规程文档</text>
+      <text>管理员可上传并维护资料</text>
+    </view>
+    <button class="upload-btn" bindtap="chooseFile">上传资料</button>
+  </view>
+
+  <view wx:if="{{documents.length}}" class="document-list">
+    <view wx:for="{{documents}}" wx:key="name" class="document-card">
+      <view class="doc-icon">{{item.type}}</view>
+      <view>
+        <text>{{item.name}}</text>
+        <text>{{item.desc}}</text>
+      </view>
+      <text>›</text>
+    </view>
+  </view>
+
+  <view wx:else class="empty-card">
+    <image src="/images/history_active.png" mode="aspectFit"></image>
+    <text>尚未导入安全规程文档</text>
+    <text>演示模式：导入校内 SOP、应急预案或安全手册后，可为安全问答提供依据。</text>
+    <button class="primary-btn" bindtap="chooseFile">导入第一份资料</button>
+  </view>
+
+  <view wx:if="{{result}}" class="upload-feedback">
+    <text>资料处理状态</text>
+    <text>{{result.message}}</text>
+  </view>
+</view>

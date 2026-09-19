@@ -1,0 +1,11 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+data/
+image/
+artifacts/
+projects/
+*.zip
+miniprogram/project.private.config.json
+.vscode/.ropeproject/

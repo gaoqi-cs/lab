@@ -1,0 +1,23 @@
+<view class="chat-page">
+  <view class="chat-tip">未导入知识库时，回答仅为模型推演；请以校内正式安全文件为准。</view>
+  <view class="suggestion-row">
+    <text bindtap="useSuggestion" data-text="酒精灯使用后应如何处理？">酒精灯使用后应如何处理？</text>
+    <text bindtap="useSuggestion" data-text="进入实验室前需要检查什么？">进入实验室前需要检查什么？</text>
+  </view>
+
+  <scroll-view class="message-list" scroll-y="true" scroll-into-view="{{scrollIntoView}}">
+    <view wx:for="{{messages}}" wx:key="index" class="message {{item.role}}">
+      <text class="message-name">{{item.role == 'user' ? '你' : 'AI 安全助手'}}</text>
+      <view class="bubble">
+        <text>{{item.content || '正在整理安全资料…'}}</text>
+        <text wx:if="{{item.role == 'ai' && item.content}}" class="source-mark">回答来源以正文中的资料来源说明为准</text>
+      </view>
+    </view>
+    <view id="bottom"></view>
+  </scroll-view>
+
+  <view class="composer">
+    <input placeholder="输入实验室安全问题" value="{{inputText}}" bindinput="onInput" confirm-type="send" bindconfirm="sendMessage" />
+    <button bindtap="sendMessage" disabled="{{!inputText || isStreaming}}">发送</button>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+<!-- THESIS: A precise campus safety tool in the supplied technology-blue visual system. OWN-WORLD: #2B5B99, mineral whites, orange-red risk and gentle scientific-card elevation. STORY: users choose a safety task, while demo limitations stay visible. FIRST VIEWPORT: welcome panel, four task cards, then a calm demo note. FORM: two-column mobile workbench. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
+<view class="home-page">
+  <view class="welcome-card">
+    <view class="welcome-copy">
+      <text>您好，</text>
+      <text>欢迎使用实验室安全巡检助手</text>
+      <text>守护实验室安全，助力科研创新</text>
+    </view>
+    <view class="welcome-art">
+      <view></view>
+      <view></view>
+      <view></view>
+    </view>
+    <view class="welcome-safe">
+      <image src="/images/home_active.png" mode="aspectFit"></image>
+      <text>安全无小事 · 巡检早发现 · 风险早预防</text>
+    </view>
+  </view>
+  <view class="role-row"><text>当前角色：管理员 / 学生</text><text>安全工作台</text></view>
+  <view class="feature-grid">
+    <view wx:for="{{features}}" wx:key="title" class="feature-card" bindtap="navigateTo" data-url="{{item.url}}">
+      <view class="feature-icon {{item.tone}}"><image src="{{item.icon}}" mode="aspectFit"></image></view>
+      <text class="feature-title">{{item.title}}</text>
+      <text class="feature-desc">{{item.description}}</text>
+      <text class="feature-arrow">›</text>
+    </view>
+  </view>
+  <view wx:if="{{latestInspection}}" class="latest-card">
+    <view>
+      <text>最近巡检记录</text>
+      <text>{{latestInspection.image_name}} · {{latestInspection.created_at}}</text>
+    </view>
+    <view>
+      <text>{{latestInspection.label}}</text>
+      <text>{{latestInspection.confidence}}</text>
+    </view>
+  </view>
+  <view class="demo-card">
+    <view class="demo-title">
+      <text>!</text>
+      <text>演示提示</text>
+    </view>
+    <text>模型和知识库资源未导入时，仅展示系统流程；正式巡检请以校内安全规程为准。</text>
+  </view>
+</view>

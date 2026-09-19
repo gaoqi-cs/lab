@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/train/train",
+    "pages/classify/classify",
+    "pages/knowledge/knowledge",
+    "pages/chat/chat"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#2B5B99",
+    "navigationStyle": "default",
+    "navigationBarTitleText": "实验室安全巡检助手",
+    "backgroundColor": "#F5F7FA"
+  },
+  "style": "v2",
+  "renderer": "webview",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#86909C",
+    "selectedColor": "#2B5B99",
+    "backgroundColor": "#ffffff",
+    "borderStyle":"white",
+    "list": [
+      {"pagePath": "pages/home/home","text": "首页","iconPath":"/images/home.png","selectedIconPath": "images/home_active.png"},
+      {"pagePath": "pages/classify/classify","text": "识别","iconPath":"/images/classify.png","selectedIconPath": "images/classify_active.png"},
+      {"pagePath": "pages/train/train","text": "训练","iconPath":"/images/me.png","selectedIconPath": "images/me_active.png"},
+      {"pagePath": "pages/knowledge/knowledge","text": "知识库","iconPath":"/images/history.png","selectedIconPath": "images/history_active.png"},
+      {"pagePath": "pages/chat/chat","text": "问答","iconPath":"/images/chat.png","selectedIconPath": "images/chat_active.png"}
+    ]
+  },
+  "permission": {
+    "scope.camera":{
+      "desc":"需要使用相机"
+    }
+  }
+}
